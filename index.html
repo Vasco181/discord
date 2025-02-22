@@ -1,6 +1,25 @@
 
 
-<!DOCTYPE html>
+  <!-- Main Container with Social Links -->
+  <div class="container">
+    <h1>Connect with Me!</h1>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/159SnvqVRG/" target="_blank" target="_blank" class="facebook">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/bishowmgrx?igsh=MWcwdno1d3plMHdrcQ==" target="_blank" class="instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://youtube.com/@vasco_live69?si=dkPoVSFW97Qv_o8h" target="_blank" class="youtube">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://discord.com/invite/balenontop" target="_blank" class="discord">
+        <i class="fab fa-discord"></i> Discord
+
+
+
+
+        <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -16,13 +35,14 @@
     }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #141e30, #243b55);
+      /* Replace the URL below with your full-screen Luffy image URL */
+      background: url('https://www.bing.com/images/blob?bcid=r1pGOaohWiIITQ') no-repeat center center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       color: #fff;
-      position: relative; /* Needed for absolutely positioned sliders */
+      position: relative;
     }
     .container {
       background: rgba(0, 0, 0, 0.6);
@@ -80,56 +100,10 @@
       margin-right: 12px;
       font-size: 1.2rem;
     }
-    /* Luffy Slider Styles */
-    .luffy-slider {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 150px;       /* Adjust as needed */
-      height: 150px;      /* Adjust as needed */
-      overflow: hidden;
-      z-index: 1;
-    }
-    .luffy-slider.left { left: 10px; }
-    .luffy-slider.right { right: 10px; }
-    .luffy-slider .slider {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    .luffy-slider .slider img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      animation: fade 9s infinite;
-    }
-    /* Stagger the fade animation for each slide */
-    .luffy-slider .slider img:nth-child(1) { animation-delay: 0s; }
-    .luffy-slider .slider img:nth-child(2) { animation-delay: 3s; }
-    .luffy-slider .slider img:nth-child(3) { animation-delay: 6s; }
-    @keyframes fade {
-      0%   { opacity: 0; }
-      10%  { opacity: 1; }
-      33%  { opacity: 1; }
-      43%  { opacity: 0; }
-      100% { opacity: 0; }
-    }
   </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Luffy Slider on the Left -->
-  <div class="luffy-slider left">
-    <div class="slider">
-      <img src="https://www.bing.com/images/blob?bcid=r1pGOaohWiIITQ" alt="Luffy Slide 1" />
-      <img src="https://www.bing.com/images/blob?bcid=r1pGOaohWiIITQ" alt="Luffy Slide 2" />
-      <img src="https://www.bing.com/images/blob?bcid=r1pGOaohWiIITQ" alt="Luffy Slide 3" />
-    </div>
-  </div>
-
-  <!-- Main Container with Social Links -->
   <div class="container">
     <h1>Connect with Me!</h1>
     <div class="social-links">
@@ -147,15 +121,7 @@
       </a>
     </div>
   </div>
-
-  <!-- Luffy Slider on the Right -->
-  <div class="luffy-slider right">
-    <div class="slider">
-      <img src="https://via.placeholder.com/150?text=Luffy+1" alt="Luffy Slide 1" />
-      <img src="https://via.placeholder.com/150?text=Luffy+2" alt="Luffy Slide 2" />
-      <img src="https://via.placeholder.com/150?text=Luffy+3" alt="Luffy Slide 3" />
-    </div>
-  </div>
 </body>
 </html>
+
 
