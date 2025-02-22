@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +8,12 @@
   <title>My Profile Links</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #141e30, #243b55);
@@ -20,8 +22,8 @@
       align-items: center;
       height: 100vh;
       color: #fff;
+      position: relative; /* Needed for absolutely positioned sliders */
     }
-
     .container {
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(15px);
@@ -31,27 +33,19 @@
       text-align: center;
       width: 360px;
       border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 2;
     }
-
     h1 {
       margin-bottom: 20px;
       font-size: 2.2rem;
       font-weight: 600;
       letter-spacing: 1px;
     }
-
-    /* Animation keyframes for slide-in effect */
+    /* Social Links with slide-in animation */
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
     }
-
     .social-links a {
       display: flex;
       align-items: center;
@@ -65,50 +59,81 @@
       font-size: 1rem;
       transition: all 0.3s ease;
       border: 2px solid transparent;
-      opacity: 0;  /* Start hidden for animation */
+      opacity: 0; /* Start hidden for animation */
       animation: slideIn 0.8s ease-out forwards;
     }
-
-    /* Stagger animation delays for each social link */
+    /* Stagger animation delays for social links */
     .social-links a:nth-child(1) { animation-delay: 0.2s; }
     .social-links a:nth-child(2) { animation-delay: 0.4s; }
     .social-links a:nth-child(3) { animation-delay: 0.6s; }
     .social-links a:nth-child(4) { animation-delay: 0.8s; }
-
     .social-links a:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       border: 2px solid rgba(255, 255, 255, 0.5);
     }
-
-    .facebook {
-      background: #3b5998;
-    }
-
-    .instagram {
-      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-    }
-    
-    .youtube {
-      background: #ff0000;
-    }
-
-    .discord {
-      background: #7289da;
-    }
-
+    .facebook { background: #3b5998; }
+    .instagram { background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); }
+    .youtube { background: #ff0000; }
+    .discord { background: #7289da; }
     .social-links a i {
       margin-right: 12px;
       font-size: 1.2rem;
+    }
+    /* Luffy Slider Styles */
+    .luffy-slider {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 150px;       /* Adjust as needed */
+      height: 150px;      /* Adjust as needed */
+      overflow: hidden;
+      z-index: 1;
+    }
+    .luffy-slider.left { left: 10px; }
+    .luffy-slider.right { right: 10px; }
+    .luffy-slider .slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .luffy-slider .slider img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fade 9s infinite;
+    }
+    /* Stagger the fade animation for each slide */
+    .luffy-slider .slider img:nth-child(1) { animation-delay: 0s; }
+    .luffy-slider .slider img:nth-child(2) { animation-delay: 3s; }
+    .luffy-slider .slider img:nth-child(3) { animation-delay: 6s; }
+    @keyframes fade {
+      0%   { opacity: 0; }
+      10%  { opacity: 1; }
+      33%  { opacity: 1; }
+      43%  { opacity: 0; }
+      100% { opacity: 0; }
     }
   </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Luffy Slider on the Left -->
+  <div class="luffy-slider left">
+    <div class="slider">
+      <img src="https://via.placeholder.com/150?text=Luffy+1" alt="Luffy Slide 1" />
+      <img src="https://via.placeholder.com/150?text=Luffy+2" alt="Luffy Slide 2" />
+      <img src="https://via.placeholder.com/150?text=Luffy+3" alt="Luffy Slide 3" />
+    </div>
+  </div>
+
+  <!-- Main Container with Social Links -->
   <div class="container">
     <h1>Connect with Me!</h1>
     <div class="social-links">
-      <a href="https://www.facebook.com/share/159SnvqVRG/" target="_blank" class="facebook">
+      <a href="https://www.facebook.com/share/159SnvqVRG/" target="_blank" target="_blank" class="facebook">
         <i class="fab fa-facebook-f"></i> Facebook
       </a>
       <a href="https://www.instagram.com/bishowmgrx?igsh=MWcwdno1d3plMHdrcQ==" target="_blank" class="instagram">
@@ -122,5 +147,15 @@
       </a>
     </div>
   </div>
+
+  <!-- Luffy Slider on the Right -->
+  <div class="luffy-slider right">
+    <div class="slider">
+      <img src="https://via.placeholder.com/150?text=Luffy+1" alt="Luffy Slide 1" />
+      <img src="https://via.placeholder.com/150?text=Luffy+2" alt="Luffy Slide 2" />
+      <img src="https://via.placeholder.com/150?text=Luffy+3" alt="Luffy Slide 3" />
+    </div>
+  </div>
 </body>
 </html>
+
